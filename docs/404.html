@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>천안시 AI 행정 문서 작성 꾸러미</title>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f4f6f9; color: #14233d;
+         font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; }
+  .box { text-align: center; padding: 32px 24px; }
+  h1 { font-size: 20px; margin: 0 0 12px; }
+  p { margin: 6px 0; color: #4a5568; }
+  a { display: inline-block; margin-top: 16px; padding: 10px 18px; border-radius: 8px; background: #f58a2a; color: #fff;
+      font-weight: 700; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>새 버전으로 바꾸는 중입니다</h1>
+  <p>잠시 뒤 자동으로 다시 엽니다. (<span id="sec">5</span>초)</p>
+  <p>계속 이 화면이 보이면 아래 단추를 눌러 주세요.</p>
+  <a id="go" href="./">처음 화면 열기</a>
+</div>
+<script>
+  // GitHub Pages가 새 버전을 올리는 짧은 동안 주소를 못 찾을 때 이 쪽이 보인다 → 몇 초 뒤 첫 화면을 새로 받아 연다
+  var root = location.pathname.split("/")[1] || "";
+  var home = "/" + (root && root !== "404.html" ? root + "/" : "") + "?r=" + Date.now();
+  document.getElementById("go").href = home;
+  var n = 5;
+  var t = setInterval(function () {
+    n -= 1;
+    document.getElementById("sec").textContent = n;
+    if (n <= 0) { clearInterval(t); location.replace(home); }
+  }, 1000);
+</script>
+</body>
+</html>
