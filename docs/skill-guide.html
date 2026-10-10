@@ -64,7 +64,7 @@
     </div>
     <div class="card b">
       <h3>속기록 정리 스킬</h3>
-      <p class="io"><b>넣는 것</b> 계획서(또는 보고요지) + 회의록(녹취)<br><b>나오는 것</b> 회의록 정리 한글 파일(.hwpx) — 제목 상자·행사 개요·기관·직위·성명·발언내용·핵심요약·시장님답변·관련부서 표</p>
+      <p class="io"><b>넣는 것</b> 계획서(또는 보고요지) + 속기록(녹취)<br><b>나오는 것</b> 속기록 정리 한글 파일(.hwpx) — 제목 상자·행사 개요·기관·직위·성명·발언내용·핵심요약·시장님답변·관련부서 표</p>
       <a class="btn down" href="skills/meeting-result-table.zip" download="속기록 정리 스킬(meeting-result-table).zip">속기록 정리 스킬 받기</a>
     </div>
   </div>
@@ -97,8 +97,8 @@
     <li>Claude 왼쪽 위 <span class="menu">새 채팅</span>을 누릅니다.</li>
     <li>입력 칸의 <span class="menu">+</span>(파일 첨부)로 파일 두 개를 올립니다.
       <br>· <b>계획서(또는 보고요지)</b> — 참석자 명단이 든 .hwpx 파일
-      <br>· <b>속기록(회의록)</b> — 클로바노트 등 녹취 .txt 또는 .hwpx</li>
-    <li>아래 요청문을 복사해 입력 칸에 붙여 넣고 <b>Enter</b>를 누릅니다.
+      <br>· <b>속기록</b> — 클로바노트 등 녹취 .txt 또는 .hwpx (보도자료 행사 전은 계획서만, 행사 후는 계획서 + 결과보고도 됩니다)</li>
+    <li>첨부한 뒤 <b>실행(Enter)</b>합니다. 아래 요청문을 함께 붙여 넣으면 Claude가 스킬을 더 정확히 고릅니다.
       <h3>⑤ 보도자료가 필요할 때</h3>
       <div class="prompt" id="p0">(행사 전) 첨부한 계획서로 행사 예고 보도자료(.hwpx)를 만들어 줘. cheonan-press-release-before 스킬을 사용해 줘.
 (행사 후) 첨부한 계획서와 결과보고로 행사 결과 보도자료(.hwpx)를 만들어 줘. cheonan-press-release-after 스킬을 사용해 줘.</div>
@@ -107,7 +107,7 @@
       <div class="prompt" id="p1">첨부한 계획서(또는 보고요지)와 속기록으로 천안시 간담회 결과보고서(.hwpx)를 만들어 줘. cheonan-meeting-result-report 스킬을 사용해 줘.</div>
       <button class="btn copy" data-copy="p1">요청문 복사</button><span class="ok" hidden>복사했습니다</span>
       <h3>속기록만 정리할 때</h3>
-      <div class="prompt" id="p2">첨부한 계획서(또는 보고요지)와 회의록으로 기관별 회의록 정리 표(.hwpx)를 만들어 줘. meeting-result-table 스킬을 사용해 줘.</div>
+      <div class="prompt" id="p2">첨부한 계획서(또는 보고요지)와 속기록으로 기관별 속기록 정리 표(.hwpx)를 만들어 줘. meeting-result-table 스킬을 사용해 줘.</div>
       <button class="btn copy" data-copy="p2">요청문 복사</button><span class="ok" hidden>복사했습니다</span>
     </li>
     <li>몇 분 뒤 Claude가 한글 파일을 만들어 줍니다. 파일을 눌러 <b>내려받기</b>합니다.</li>
