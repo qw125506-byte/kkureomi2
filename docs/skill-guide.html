@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude 스킬 사용 안내서</title>
+<style>
+  :root { --navy: #14233d; --navy2: #203a7b; --orange: #f58a2a; --yellow: #fff6c2; --line: #e3e7ee; --muted: #5b6474; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #f4f6f9; color: #1d2433; font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; line-height: 1.65; }
+  header { background: var(--navy); color: #fff; padding: 22px 20px; }
+  header h1 { margin: 0; font-size: 22px; }
+  header p { margin: 6px 0 0; color: #c9d3e6; font-size: 14px; }
+  main { max-width: 920px; margin: 0 auto; padding: 18px 16px 60px; }
+  section { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin: 16px 0; }
+  h2 { margin: 0 0 10px; font-size: 19px; color: var(--navy2); }
+  h3 { margin: 16px 0 6px; font-size: 16px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+  .card { border: 2px solid var(--line); border-radius: 10px; padding: 14px; }
+  .card.a { border-color: #f5b37a; background: #fff8f1; }
+  .card.b { border-color: #e0b100; background: var(--yellow); }
+  .card h3 { margin-top: 0; }
+  .io { font-size: 14px; color: var(--muted); }
+  .btn { display: inline-block; padding: 9px 16px; border-radius: 8px; font-weight: 700; text-decoration: none; border: 0; cursor: pointer; font-size: 14px; font-family: inherit; }
+  .btn.down { background: var(--orange); color: #fff; }
+  .btn.copy { background: #e8f6ee; color: #146b39; border: 1px solid #1f8a4c; }
+  ol.steps { counter-reset: s; list-style: none; padding: 0; margin: 0; }
+  ol.steps > li { counter-increment: s; position: relative; padding: 8px 0 8px 44px; border-bottom: 1px dashed var(--line); }
+  ol.steps > li:last-child { border-bottom: 0; }
+  ol.steps > li::before { content: counter(s); position: absolute; left: 0; top: 8px; width: 30px; height: 30px; border-radius: 50%; background: var(--navy2); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  .menu { display: inline-block; background: #eef2f8; border: 1px solid #d5dce8; border-radius: 6px; padding: 0 6px; font-weight: 700; }
+  .prompt { background: #f7f9fc; border: 1px solid #d5dce8; border-radius: 8px; padding: 10px 12px; margin: 8px 0; white-space: pre-wrap; font-size: 14px; }
+  .note { background: #fdecec; border: 1px solid #f3b4b4; color: #8a1c1c; border-radius: 8px; padding: 10px 12px; font-size: 14px; }
+  .tip { background: #eef6ff; border: 1px solid #bcd7f5; border-radius: 8px; padding: 10px 12px; font-size: 14px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { border: 1px solid var(--line); padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f1f4f9; }
+  .ok { color: #1f8a4c; font-weight: 700; margin-left: 8px; font-size: 13px; }
+  a { color: var(--navy2); }
+  @media print { header { background: #fff; color: #000; } .btn { display: none; } section { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Claude 스킬 사용 안내서</h1>
+  <p>천안시 AI 행정 문서 작성 꾸러미 — ⑥ 결과보고 스킬 · 속기록 정리 스킬</p>
+</header>
+<main>
+
+<section>
+  <h2>어떤 스킬인가요?</h2>
+  <p>스킬은 Claude에게 「이 일은 이렇게 하라」는 작업 설명서와 한글 양식을 미리 넣어 두는 기능입니다. 한 번 올려 두면 파일만 첨부해도 같은 양식으로 문서가 나옵니다.</p>
+  <div class="cards">
+    <div class="card a">
+      <h3>① ⑥ 결과보고 스킬</h3>
+      <p class="io"><b>넣는 것</b> 계획서(또는 보고요지) + 속기록(녹취)<br><b>나오는 것</b> 천안시 「결과 보고」 한글 파일(.hwpx) — 표지·총평·간담회 개요·기관별 의견수렴·향후계획·붙임(참석자 명단·사진)</p>
+      <a class="btn down" href="skills/cheonan-meeting-result-report.zip" download="결과보고 스킬(cheonan-meeting-result-report).zip">결과보고 스킬 받기</a>
+    </div>
+    <div class="card b">
+      <h3>② 속기록 정리 스킬</h3>
+      <p class="io"><b>넣는 것</b> 계획서(또는 보고요지) + 회의록(녹취)<br><b>나오는 것</b> 회의록 정리 한글 파일(.hwpx) — 제목 상자·행사 개요·기관·직위·성명·발언내용·핵심요약·시장님답변·관련부서 표</p>
+      <a class="btn down" href="skills/meeting-result-table.zip" download="속기록 정리 스킬(meeting-result-table).zip">속기록 정리 스킬 받기</a>
+    </div>
+  </div>
+  <p class="tip">결과보고서 한 부가 필요하면 ①, 발언을 기관별 표로만 정리하고 싶으면 ②를 쓰세요. 두 스킬을 모두 올려 두어도 됩니다.</p>
+</section>
+
+<section>
+  <h2>1단계 · 준비 (처음 한 번만)</h2>
+  <ol class="steps">
+    <li>인터넷 창(크롬·엣지)에서 <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a>에 로그인합니다.</li>
+    <li>왼쪽 아래 내 이름(프로필)을 눌러 <span class="menu">설정</span>으로 들어갑니다.</li>
+    <li><span class="menu">기능</span>(Capabilities)에서 <span class="menu">코드 실행 및 파일 생성</span>을 켭니다. 이것이 꺼져 있으면 스킬이 한글 파일을 만들지 못합니다.</li>
+  </ol>
+  <p class="tip">메뉴 이름은 Claude 화면 버전에 따라 조금 다를 수 있습니다. 「스킬」 메뉴가 보이지 않으면 요금제나 기관 관리자 설정에서 스킬 사용이 막혀 있는지 확인하세요.</p>
+</section>
+
+<section>
+  <h2>2단계 · 스킬 올리기 (스킬마다 처음 한 번만)</h2>
+  <ol class="steps">
+    <li>위의 <b>스킬 받기</b> 단추로 zip 파일을 내려받습니다. <b>압축을 풀지 마세요.</b> zip 그대로 올립니다.</li>
+    <li>Claude <span class="menu">설정</span> → <span class="menu">기능</span> → <span class="menu">스킬</span>으로 갑니다.</li>
+    <li><span class="menu">스킬 업로드</span>를 누르고 내려받은 zip 파일을 고릅니다.</li>
+    <li>목록에 <b>cheonan-meeting-result-report</b>(결과보고) 또는 <b>meeting-result-table</b>(속기록 정리)이 생기고 켜져 있으면 끝입니다.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>3단계 · 사용하기 (문서가 필요할 때마다)</h2>
+  <ol class="steps">
+    <li>Claude 왼쪽 위 <span class="menu">새 채팅</span>을 누릅니다.</li>
+    <li>입력 칸의 <span class="menu">+</span>(파일 첨부)로 파일 두 개를 올립니다.
+      <br>· <b>계획서(또는 보고요지)</b> — 참석자 명단이 든 .hwpx 파일
+      <br>· <b>속기록(회의록)</b> — 클로바노트 등 녹취 .txt 또는 .hwpx</li>
+    <li>아래 요청문을 복사해 입력 칸에 붙여 넣고 <b>Enter</b>를 누릅니다.
+      <h3>① 결과보고서가 필요할 때</h3>
+      <div class="prompt" id="p1">첨부한 계획서(또는 보고요지)와 속기록으로 천안시 간담회 결과보고서(.hwpx)를 만들어 줘. cheonan-meeting-result-report 스킬을 사용해 줘.</div>
+      <button class="btn copy" data-copy="p1">요청문 복사</button><span class="ok" hidden>복사했습니다</span>
+      <h3>② 속기록만 정리할 때</h3>
+      <div class="prompt" id="p2">첨부한 계획서(또는 보고요지)와 회의록으로 기관별 회의록 정리 표(.hwpx)를 만들어 줘. meeting-result-table 스킬을 사용해 줘.</div>
+      <button class="btn copy" data-copy="p2">요청문 복사</button><span class="ok" hidden>복사했습니다</span>
+    </li>
+    <li>몇 분 뒤 Claude가 한글 파일을 만들어 줍니다. 파일을 눌러 <b>내려받기</b>합니다.</li>
+    <li>한글에서 열어 확인합니다. Claude 답변 끝에 적힌 <b>확인 필요</b> 항목(관련부서 추정, 발언자 확인 등)을 먼저 고치세요.</li>
+  </ol>
+  <p class="tip">Claude가 부서명·행사 목적 같은 빠진 정보를 물어보면 채팅으로 답하면 됩니다. 결과가 마음에 들지 않으면 같은 채팅에서 「총평을 4줄로 줄여 줘」처럼 고쳐 달라고 하세요.</p>
+</section>
+
+<section>
+  <h2>자주 묻는 질문</h2>
+  <table>
+    <tr><th style="width:34%">상황</th><th>이렇게 하세요</th></tr>
+    <tr><td>.hwp 파일이라 안 읽혀요</td><td>한글에서 <b>다른 이름으로 저장 → 파일 형식 HWPX(.hwpx)</b>로 저장한 뒤 다시 첨부하세요.</td></tr>
+    <tr><td>스킬을 안 쓰고 엉뚱하게 만들어요</td><td>요청문에 스킬 이름(cheonan-meeting-result-report / meeting-result-table)이 들어 있는지 확인하고, 설정 → 기능 → 스킬에서 켜져 있는지 보세요.</td></tr>
+    <tr><td>결재란 직위를 바꾸고 싶어요</td><td>결과보고 스킬은 결재란을 양식 그대로 고정합니다. 내려받은 뒤 한글에서 직접 고치세요.</td></tr>
+    <tr><td>회의록(붙임)도 넣고 싶어요</td><td>결과보고 스킬은 기본으로 회의록을 붙이지 않습니다. 요청문 끝에 「붙임에 회의록도 넣어 줘」를 덧붙이세요.</td></tr>
+    <tr><td>사진을 넣고 싶어요</td><td>행사 사진(jpg·png)을 함께 첨부하고 「붙임 사진에 넣어 줘」라고 적으세요. 없으면 「별도 첨부」로 남습니다.</td></tr>
+    <tr><td>글꼴이 다르게 보여요</td><td>PC에 양식 글꼴(나눔스퀘어 ExtraBold, HY헤드라인M, HY견명조, 강원교육튼튼, 한컴산뜻돋움 등)이 없으면 한글이 비슷한 글꼴로 보여 줍니다. 내용에는 문제가 없습니다.</td></tr>
+  </table>
+  <p class="note"><b>개인정보·보안</b> — 속기록에는 참석자 실명과 발언이 들어 있습니다. Claude에 파일을 올리기 전에 기관의 생성형 AI 이용 지침(외부 AI에 올려도 되는 자료인지)을 꼭 확인하세요. 꾸러미 웹 자체는 입력 내용을 밖으로 보내지 않지만, 스킬은 Claude(외부 서비스)에서 동작합니다.</p>
+</section>
+
+<p style="text-align:center"><a href="./">← 문서 작성 꾸러미로 돌아가기</a> · <a href="#" onclick="window.print();return false">이 안내서 인쇄하기</a></p>
+</main>
+<script>
+  document.querySelectorAll("[data-copy]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var t = document.getElementById(b.dataset.copy).textContent;
+      var done = function () { var ok = b.nextElementSibling; ok.hidden = false; setTimeout(function () { ok.hidden = true; }, 1800); };
+      if (navigator.clipboard) navigator.clipboard.writeText(t).then(done, function () { prompt("아래 글을 복사하세요", t); });
+      else prompt("아래 글을 복사하세요", t);
+    });
+  });
+</script>
+</body>
+</html>
